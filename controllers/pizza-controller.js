@@ -46,7 +46,8 @@ getPizzaById({ params }, res) {
         Pizza.findOneAndUpdate({
                 _id: params.id
             }, body, {
-                new: true
+                new: true,
+                runValidators: true
             })
             .then(dbPizzaData => {
                 if (!dbPizzaData) {
